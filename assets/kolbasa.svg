@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360">
+  <defs>
+    <pattern id="pattern" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="#ffcc85"/>
+      <rect x="20" y="20" width="20" height="20" fill="#ffcc85"/>
+    </pattern>
+  </defs>
+  <rect width="640" height="360" fill="#ffd39b"/>
+  <rect width="640" height="360" fill="url(#pattern)" opacity=".32"/>
+  <rect x="130" y="202" width="330" height="96" rx="14" fill="#9f5b22" stroke="#5e2d0e" stroke-width="8"/>
+  <ellipse cx="214" cy="250" rx="82" ry="56" fill="#cc4932"/>
+  <ellipse cx="280" cy="248" rx="82" ry="56" fill="#cf4d34"/>
+  <ellipse cx="346" cy="246" rx="82" ry="56" fill="#cf4d34"/>
+  <ellipse cx="410" cy="244" rx="70" ry="50" fill="#c6432d"/>
+  <ellipse cx="184" cy="250" rx="34" ry="44" fill="#f2a98f"/>
+  <ellipse cx="232" cy="250" rx="34" ry="44" fill="#f7b29a"/>
+  <ellipse cx="280" cy="248" rx="34" ry="44" fill="#f7b29a"/>
+  <ellipse cx="328" cy="246" rx="34" ry="44" fill="#f2a98f"/>
+  <ellipse cx="376" cy="246" rx="34" ry="44" fill="#f7b29a"/>
+  <ellipse cx="70" cy="260" rx="34" ry="24" fill="#de4030"/>
+  <rect x="97" y="253" width="24" height="12" fill="#2c7f2d"/>
+  <ellipse cx="98" cy="234" rx="20" ry="16" fill="#df4731"/>
+  <ellipse cx="126" cy="280" rx="18" ry="20" fill="#f8efe0"/>
+  <ellipse cx="138" cy="278" rx="18" ry="20" fill="#f4e6d1"/>
+  <ellipse cx="150" cy="280" rx="18" ry="20" fill="#f8efe0"/>
+  <rect x="135" y="248" width="8" height="18" fill="#88ab3b"/>
+  <rect x="480" y="92" width="94" height="140" rx="10" fill="#88b05f" stroke="#5e2d0e" stroke-width="8"/>
+  <rect x="492" y="74" width="70" height="32" rx="10" fill="#b69363" stroke="#5e2d0e" stroke-width="8"/>
+  <rect x="494" y="116" width="66" height="96" fill="#7da652"/>
+  <circle cx="514" cy="140" r="10" fill="#40692a"/>
+  <circle cx="540" cy="148" r="10" fill="#4c7d34"/>
+  <circle cx="526" cy="174" r="10" fill="#3a6127"/>
+  <circle cx="550" cy="184" r="10" fill="#456f2f"/>
+  <rect y="314" width="640" height="46" fill="#f4f0e6"/>
+  <path d="M0 314 L640 314" stroke="#cb9c63" stroke-width="6"/>
+</svg>
