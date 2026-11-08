@@ -1,4 +1,2 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://bullinkln.github.io/212su-site/sitemap.xml
