@@ -1,0 +1,61 @@
+/* 212.SU V10. Install UI only: no top stripe, subtitle or confirmation footnote. */
+#pwa-install-banner[hidden],#pwa-help-dialog[hidden],#pwa-manual-install[hidden],#pwa-help-dialog [hidden]{display:none!important}
+#pwa-install-banner,#pwa-help-dialog{font-family:system-ui,-apple-system,'Segoe UI',Arial,sans-serif;color:#163951;font-size:14px;line-height:1.45;box-sizing:border-box;text-align:left;isolation:isolate}
+#pwa-install-banner *,#pwa-help-dialog *{box-sizing:border-box}
+#pwa-install-banner{position:fixed;z-index:2147482000;right:18px;bottom:calc(var(--pwa-bottom,76px) + env(safe-area-inset-bottom,0px));width:368px;max-width:calc(100vw - 24px);padding:12px;background:linear-gradient(120deg,#fff 55%,#f4fbff);border:1px solid #c4ddf4;border-radius:18px;box-shadow:0 12px 32px rgba(8,52,98,.17),0 2px 6px rgba(8,52,98,.06);animation:pwa9-rise .4s cubic-bezier(.2,.8,.25,1) both}
+/* Reset both pseudo-elements explicitly: also neutralises an older cached stripe. */
+#pwa-install-banner::before,#pwa-install-banner::after{content:none!important;display:none!important}
+#pwa-install-banner .pwa-banner-main{display:grid;grid-template-columns:42px minmax(0,1fr) 40px;align-items:center;gap:10px;min-height:42px}
+#pwa-install-banner .pwa-icon{display:block;width:42px;height:42px;object-fit:contain;border:0;border-radius:10px}
+#pwa-install-banner h2{margin:0;padding:0;color:#0752a3;font-size:17px;font-weight:800;line-height:1.25;letter-spacing:-.02em;overflow-wrap:break-word}
+#pwa-install-banner button,#pwa-help-dialog button,#pwa-manual-install{font-family:inherit;cursor:pointer;letter-spacing:normal;text-transform:none;touch-action:manipulation;-webkit-tap-highlight-color:transparent}
+#pwa-install-banner .pwa-close,#pwa-help-dialog .pwa-close{display:flex;align-items:center;justify-content:center;width:40px;height:40px;min-height:40px;padding:0;border:0;border-radius:11px;background:transparent;color:#65819a;flex-shrink:0}
+#pwa-install-banner .pwa-close svg,#pwa-help-dialog .pwa-close svg{display:block;pointer-events:none;width:16px;height:16px}
+#pwa-install-banner .pwa-close:hover,#pwa-help-dialog .pwa-close:hover{background:#e9f3fc;color:#0752a3}
+#pwa-install-banner .pwa-actions{display:grid;grid-template-columns:minmax(0,1fr) 70px;gap:8px;margin-top:10px}
+#pwa-install-banner .pwa-primary,#pwa-help-dialog .pwa-primary{position:relative;display:inline-flex;align-items:center;justify-content:center;min-width:0;min-height:46px;padding:11px 14px;border:1px solid #0571db;border-radius:11px;background:linear-gradient(100deg,#066cda,#0285ef);color:#fff;font-size:14px;font-weight:750;line-height:1.3;text-align:center;box-shadow:0 3px 8px rgba(0,104,208,.16);text-decoration:none;overflow-wrap:anywhere}
+#pwa-install-banner .pwa-primary::after{content:none!important}
+#pwa-install-banner.pwa-attention .pwa-primary{animation:pwa9-pulse 3s ease-in-out .9s 2}
+#pwa-install-banner .pwa-primary:hover,#pwa-help-dialog .pwa-primary:hover{background:#0663ca}
+#pwa-install-banner .pwa-primary:active,#pwa-help-dialog .pwa-primary:active{background:#0758b1}
+#pwa-install-banner .pwa-primary:disabled,#pwa-help-dialog .pwa-primary:disabled{cursor:wait;opacity:.7}
+#pwa-install-banner .pwa-later{min-height:46px;min-width:0;padding:10px 6px;border:0;border-radius:11px;background:transparent;color:#456883;font-size:13px;font-weight:600;line-height:1.3}
+#pwa-install-banner .pwa-later:hover{background:#eaf4fd}
+#pwa-install-banner button:focus-visible,#pwa-help-dialog button:focus-visible,#pwa-help-dialog summary:focus-visible,#pwa-manual-install:focus-visible{outline:3px solid #007ebd;outline-offset:3px}
+.pwa-footer-controls{padding-top:0;padding-bottom:22px}
+#pwa-manual-install{font:600 13px/1.4 system-ui,-apple-system,'Segoe UI',Arial,sans-serif;min-height:44px;padding:9px 13px;border:1px solid #c8ddf3;background:#fff;color:#0756a4;border-radius:9px}
+#pwa-manual-install:hover{background:#edf6ff}
+/* Non-modal fallback only after an explicit click. No backdrop, no focus trap. */
+#pwa-help-dialog{position:fixed;inset:auto 18px calc(var(--pwa-bottom,76px) + env(safe-area-inset-bottom,0px)) auto;z-index:2147483000;width:410px;max-width:calc(100vw - 24px);max-height:min(530px,calc(100dvh - var(--pwa-bottom,76px) - 30px));margin:0;padding:0;overflow:auto;overscroll-behavior:contain;border:1px solid #c4ddf4;border-radius:18px;background:#fff;box-shadow:0 15px 45px rgba(7,47,91,.23);animation:pwa9-rise .22s ease-out both}
+#pwa-help-dialog .pwa-help-inner{position:relative;padding:16px}
+#pwa-help-dialog .pwa-close{position:absolute;top:10px;right:10px}
+#pwa-help-dialog .pwa-help-brand{display:flex;align-items:center;gap:8px;margin:0 42px 12px 0;color:#0752a3;font-size:15px;font-weight:800}
+#pwa-help-dialog .pwa-help-icon{display:block;width:36px;height:36px;object-fit:contain}
+#pwa-help-dialog h2{margin:0 0 6px;font-size:19px;line-height:1.25;font-weight:800;letter-spacing:-.02em;color:#0752a3}
+#pwa-help-dialog #pwa-help-subtitle{margin:0 0 12px;font-size:12px;line-height:1.5;color:#506b80}
+#pwa-help-dialog ol{list-style:none;counter-reset:step;margin:0;padding:0}
+#pwa-help-dialog li{counter-increment:step;position:relative;min-height:29px;margin:0 0 9px;padding:3px 0 3px 33px;font-size:13px;line-height:1.5;color:#24445f}
+#pwa-help-dialog li::before{content:counter(step);position:absolute;top:2px;left:0;display:grid;place-items:center;width:24px;height:24px;border-radius:8px;background:#eaf4fe;color:#076dd0;font-weight:800;font-size:12px}
+#pwa-help-dialog .pwa-help-note{margin:11px 0;padding:9px 10px;border:1px solid #e0ecf7;border-radius:9px;background:#f5faff;color:#4a6980;font-size:11px;line-height:1.55}
+#pwa-help-dialog details{padding:0;margin:10px 0;border:0;border-radius:0;background:transparent;color:#50718a;font-size:12px}
+#pwa-help-dialog summary{cursor:pointer;padding:7px 0;color:#095ca6;font-size:12px;font-weight:650}
+#pwa-help-dialog details p{margin:5px 0 10px;font-size:12px;line-height:1.5}
+#pwa-help-dialog .pwa-help-address{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:7px;margin:12px 0;padding:9px;border:1px solid #dceafa;border-radius:9px;background:#f7fbff;color:#0757a8;font-size:12px}
+#pwa-help-dialog .pwa-help-address strong{user-select:all}
+#pwa-help-dialog #pwa-help-copy{min-height:40px;padding:8px 9px;border:1px solid #c8ddf3;border-radius:8px;background:#fff;color:#0756a4;font-size:12px;font-weight:600}
+#pwa-help-dialog .pwa-help-actions{position:sticky;bottom:-16px;margin:10px 0 -16px;padding:8px 0 16px;background:#fff;box-shadow:0 -7px 9px #fff}
+#pwa-help-dialog .pwa-help-done,#pwa-help-dialog #pwa-help-native{width:100%}
+#pwa-help-dialog #pwa-help-native{margin:0 0 12px}
+@keyframes pwa9-rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pwa9-pulse{0%,100%{box-shadow:0 3px 8px rgba(0,104,208,.16)}50%{box-shadow:0 4px 15px rgba(0,104,208,.3),0 0 0 3px rgba(6,143,229,.1)}}
+@media(max-width:600px){
+ #pwa-install-banner{left:12px;right:12px;max-width:none;width:auto;padding:11px;border-radius:17px}
+ #pwa-install-banner h2{font-size:16px}
+ #pwa-install-banner .pwa-banner-main{grid-template-columns:40px minmax(0,1fr) 40px;gap:9px;min-height:40px}
+ #pwa-install-banner .pwa-icon{width:40px;height:40px}
+ #pwa-install-banner .pwa-actions{margin-top:9px;grid-template-columns:minmax(0,1fr) 65px;gap:7px}
+ #pwa-help-dialog{left:12px;right:12px;width:auto;max-width:none;max-height:min(470px,calc(100dvh - var(--pwa-bottom,76px) - 24px))}
+ #pwa-help-dialog .pwa-help-inner{padding:15px}
+}
+@media(prefers-reduced-motion:reduce){#pwa-install-banner,#pwa-install-banner .pwa-primary,#pwa-help-dialog{animation:none!important;transition:none!important}}
+@media(forced-colors:active){#pwa-install-banner,#pwa-help-dialog{border:1px solid CanvasText;background:Canvas;color:CanvasText}#pwa-install-banner .pwa-primary,#pwa-help-dialog .pwa-primary{border:1px solid ButtonText;background:ButtonFace;color:ButtonText}}

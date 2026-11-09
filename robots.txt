@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://212.su/sitemap.xml

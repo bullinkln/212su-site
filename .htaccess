@@ -1,0 +1,34 @@
+# 212.SU - canonical origin and Jino HTTPS reverse-proxy compatibility.
+DirectoryIndex index.html
+RewriteEngine On
+# Let certificate validation reach its files without an HTTPS redirect.
+RewriteRule ^\.well-known/acme-challenge/ - [L]
+# Preserve the original 404 status during internal error-page handling.
+RewriteCond %{ENV:REDIRECT_STATUS} ^404$
+RewriteRule ^404\.html$ - [L]
+# Redirect only direct index.html requests, not the DirectoryIndex subrequest.
+# Existing attribution parameters in the query string are preserved.
+RewriteCond %{THE_REQUEST} \s/+index\.html(?:[?\s]) [NC]
+RewriteRule ^index\.html$ https://212.su/ [R=301,L]
+RewriteCond %{HTTP_HOST} ^www\.212\.su(?::[0-9]+)?$ [NC]
+RewriteRule ^ https://212.su%{REQUEST_URI} [R=301,L]
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Protocol} !^https$ [NC]
+RewriteCond %{HTTP:X-Forwarded-Proto} !^https$ [NC]
+RewriteRule ^ https://212.su%{REQUEST_URI} [R=301,L]
+ErrorDocument 404 /404.html
+<IfModule mod_headers.c>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+
+# V12: manifest type and revalidation for the install layer.
+<IfModule mod_mime.c>
+  AddType application/manifest+json .webmanifest
+</IfModule>
+<IfModule mod_headers.c>
+  <FilesMatch "^(sw-212su\.js|manifest\.webmanifest|install-212su\.(js|css))$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
